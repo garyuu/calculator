@@ -1,3 +1,7 @@
+body {
+    font-family: Calibri;
+}
+
 .panel {
     border-style: double;
     border-width: 2px;
@@ -6,16 +10,23 @@
     background-color: white;
 }
 
-.panel thead {
-    font-size: 24px;
-    font-family: Calibri;
-    width: 384px;
-}
-
-.panel thead td {
+.panel_title {
     font-weight: bold;
     text-align: center;
-    display: block;
-    width: 384px;
+    font-size: 32px;
 }
 
+.panel_display {
+    font-size: 20px;
+    text-align: right;
+}
+
+.panel_base_display_name {
+    font-size: 14px;
+    text-align: center;
+}
+
+.panel_base_display_value {
+    font-size: 14px;
+    text-align: left;
+}
