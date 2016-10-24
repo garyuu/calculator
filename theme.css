@@ -1,13 +1,14 @@
 body {
     font-family: Calibri;
+    color: white;
 }
 
 .panel {
-    border-style: double;
-    border-width: 2px;
-    border-color: black;
+    border-style: outset;
+    border-width: 10px;
+    border-color: brown;
     border-radius: 5px;
-    background-color: white;
+    background-color: black;
 }
 
 .panel_title {
@@ -19,6 +20,7 @@ body {
 .panel_display {
     font-size: 20px;
     text-align: right;
+    padding-right: 5px;
 }
 
 .panel_base_display_name {
@@ -37,7 +39,7 @@ body {
     border-style: solid;
     border-width: 2px;
     border-radius: 4px;
-    background-color: grey;
+    background-color: darkblue;
     width: 48px;
     height: 48px;
 }
