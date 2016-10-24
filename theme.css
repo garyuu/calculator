@@ -1,0 +1,21 @@
+.panel {
+    border-style: double;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.panel thead {
+    font-size: 24px;
+    font-family: Calibri;
+    width: 384px;
+}
+
+.panel thead td {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    width: 384px;
+}
+
