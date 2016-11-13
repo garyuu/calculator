@@ -27,12 +27,25 @@ function ValueDisplay()
     equal.innerHTML = Equation();
 
     // Multibase display
-    var val = result > 0 ? result : numbers[0];
-    hex.innerHTML = (val >>> 0).toString(base_int.hex);
-    dec.innerHTML = (val >>> 0).toString(base_int.dec);
+    var val = result != 0 ? result : numbers[0];
+    hex.innerHTML = (val >>> 0).toString(base_int.hex).toUpperCase();
+    dec.innerHTML = val.toString(base_int.dec);
     oct.innerHTML = (val >>> 0).toString(base_int.oct);
     bin.innerHTML = (val >>> 0).toString(base_int.bin);
-    main.innerHTML = (val >>> 0).toString(base)
+    switch(base){
+    case base_int.hex:
+        main.innerHTML = hex.innerHTML;
+        break;
+    case base_int.dec:
+        main.innerHTML = dec.innerHTML;
+        break;
+    case base_int.oct:
+        main.innerHTML = oct.innerHTML;
+        break;
+    case base_int.bin:
+        main.innerHTML = bin.innerHTML;
+        break;
+    }
 }
 
 function Clear()
@@ -53,7 +66,8 @@ function Cancel()
 
 function BackSpace()
 {
-
+    if (numbers.length > operators.length)
+        numbers[0] = (numbers[0] / base) >> 0;
     ValueDisplay();
 }
 
@@ -67,7 +81,7 @@ function UnshiftOperator(op)
 
 function Operator(op)
 {
-    if (result > 0)
+    if (result != 0)
     {
         numbers[0] = result;
         result = 0;
@@ -114,7 +128,13 @@ function Value(val)
 
 function Negative()
 {
-
+    if (numbers.length == operators.length)
+        numbers.unshift(-numbers[0]);
+    else
+        if (result != 0)
+            result = -result;
+        else
+            numbers[0] = -numbers[0];
     ValueDisplay();
 }
 
@@ -122,8 +142,8 @@ function Calculate()
 {
     if (numbers.length == operators.length)
         numbers.unshift(numbers[0]);
-    result = eval(Equation()+(numbers[0] >>> 0).toString(base))
-    numbers = [0]
-    operators = []
+    result = eval(Equation()+numbers[0].toString(base));
+    numbers = [0];
+    operators = [];
     ValueDisplay();
 }
