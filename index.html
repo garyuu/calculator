@@ -16,7 +16,10 @@
         </thead>
         <tbody>
             <tr>
-                <td class="panel_display" colspan=6>
+                <td class="panel_equation" id="main_eq" colspan=6></td>
+            </tr>
+            <tr>
+                <td class="panel_display" id="main_val" colspan=6>
                     0
                 </td>
             </tr>
@@ -24,27 +27,27 @@
                 <td class="panel_base_display_name">
                     HEX
                 </td>
-                <td class="panel_base_display_value" colspan=2>
+                <td class="panel_base_display_value" id="hex_val" colspan=2>
                     0
                 </td>
                 <td class="panel_base_display_name">
                     DEC
                 </td>
-                <td class="panel_base_display_value" colspan=2>
+                <td class="panel_base_display_value" id="dec_val" colspan=2>
                     0
                 </td>
             </tr>
             <tr>
-                <td class="panel_base_display_name">
+                <td class="panel_base_display_id">
                     OCT
                 </td>
-                <td class="panel_base_display_value" colspan=2>
+                <td class="panel_base_display_value" id="oct_val" colspan=2>
                     0
                 </td>
-                <td class="panel_base_display_name">
+                <td class="panel_base_display_id">
                     BIN
                 </td>
-                <td class="panel_base_display_value" colspan=2>
+                <td class="panel_base_display_value" id="bin_val" colspan=2>
                     0
                 </td>
             </tr>
@@ -57,35 +60,35 @@
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Operator('mod')">
 						<span class="panel_button_label">
-                        Mod 
+                            Mod 
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Cancel()">
 						<span class="panel_button_label">
-                        CE
+                            CE
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Clear()">
 						<span class="panel_button_label">
-                        C
+                            C
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="BackSpace()">
 						<span class="panel_button_label">
                         ←
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Operator('div')">
 						<span class="panel_button_label">
                         ÷
                     	</span>
@@ -94,42 +97,42 @@
             </tr>
             <tr>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('A')">
 						<span class="panel_button_label">
                         A
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('B')">
 						<span class="panel_button_label">
                         B
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('7')">
 						<span class="panel_button_label">
                         7
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('8')">
 						<span class="panel_button_label">
                         8
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('9')">
 						<span class="panel_button_label">
                         9
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Operator('mul')">
 						<span class="panel_button_label">
                         x
                     	</span>
@@ -138,42 +141,42 @@
             </tr>
             <tr>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('C')">
 						<span class="panel_button_label">
                         C
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('D')">
 						<span class="panel_button_label">
                         D
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('4')">
 						<span class="panel_button_label">
                         4
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('5')">
 						<span class="panel_button_label">
                         5
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('6')">
 						<span class="panel_button_label">
                         6
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Operator('sub')">
 						<span class="panel_button_label">
                         -
                     	</span>
@@ -182,44 +185,44 @@
             </tr>
             <tr>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('E')">
 						<span class="panel_button_label">
                         E
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('F')">
 						<span class="panel_button_label">
                         F
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('1')">
 						<span class="panel_button_label">
                         1
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('2')">
 						<span class="panel_button_label">
-                        2
+                            2
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Value('3')">
 						<span class="panel_button_label">
-                        3
+                            3
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Operator('add')">
 						<span class="panel_button_label">
-                        +
+                            +
                     	</span>
 					</div>
                 </td>
@@ -240,39 +243,36 @@
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Negative()">
 						<span class="panel_button_label">
-                        ±
+                            ±
+                    	</span>
+					</div>
+                </td>
+                <td>
+                    <div class="panel_button" onclick="Value('0')">
+						<span class="panel_button_label">
+                            0
                     	</span>
 					</div>
                 </td>
                 <td>
                     <div class="panel_button">
 						<span class="panel_button_label">
-                        0
+                            
                     	</span>
 					</div>
                 </td>
                 <td>
-                    <div class="panel_button">
+                    <div class="panel_button" onclick="Calculate()">
 						<span class="panel_button_label">
-                        %
-                    	</span>
-					</div>
-                </td>
-                <td>
-                    <div class="panel_button">
-						<span class="panel_button_label">
-                        =
+                            =
                     	</span>
 					</div>
                 </td>
             </tr>
         </tbody>
     </table>
-</body>
-</html>
-        </tbody>
-    </table>
+    <script type="text/javascript" src="functions.js"></script>
 </body>
 </html>
