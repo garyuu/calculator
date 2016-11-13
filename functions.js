@@ -11,13 +11,16 @@ var operators = [];
 var number_input = true;
 var result = 0;
 
-function Equation()
+function Equation(b=base)
 {
     var i, j;
     var equation = "";
     for (i = 0, j = numbers.length == operators.length ? 0 : 1 ;
          i < operators.length && j < numbers.length ; ++i, ++j)
-        equation = (numbers[j] >>> 0).toString(base) + " " + operators[i] + " " + equation;
+        if (b == base_int.dec)
+            equation = numbers[j].toString(b) + " " + operators[i] + " " + equation;
+        else
+            equation = (numbers[j] >>> 0).toString(b).toUpperCase() + " " + operators[i] + " " + equation;
     return equation;
 }
 
@@ -50,6 +53,7 @@ function ValueDisplay()
 
 function Clear()
 {
+    result = 0;
     numbers = [0];
     operators = [];
     ValueDisplay();
@@ -121,8 +125,10 @@ function Value(val)
 {
     digit = parseInt(val, base_int.hex);
     if (base > digit)
+    {
         UnshiftDigit(digit);
-    result = 0;
+        result = 0;
+    }
     ValueDisplay();
 }
 
@@ -142,8 +148,56 @@ function Calculate()
 {
     if (numbers.length == operators.length)
         numbers.unshift(numbers[0]);
-    result = eval(Equation()+numbers[0].toString(base));
+    result = eval(Equation(base_int.dec)+numbers[0].toString(base_int.dec));
     numbers = [0];
     operators = [];
     ValueDisplay();
 }
+
+function int2base(b)
+{
+    var name = '';
+    switch(b){
+    case base_int.hex:
+        name = 'hex';
+        break;
+    case base_int.dec:
+        name = 'dec';
+        break;
+    case base_int.oct:
+        name = 'oct';
+        break;
+    case base_int.bin:
+        name = 'bin';
+        break;
+    }
+    return name;
+}
+
+function UnfocusBase(b)
+{
+    var name = int2base(b);
+    var tag = document.getElementById(name+'_tag');
+    tag.style.color = 'black';
+    tag.style.fontWeight = 'normal';
+    tag.style.backgroundColor = 'white';
+}
+
+function FocusBase(b)
+{
+    var name = int2base(b);
+    var tag = document.getElementById(name+'_tag');
+    tag.style.color = 'white';
+    tag.style.fontWeight = 'bold';
+    tag.style.backgroundColor = 'black';
+}
+
+function ChangeBase(basename)
+{
+    UnfocusBase(base);
+    base = eval("base_int."+basename);
+    FocusBase(base);
+    ValueDisplay();
+}
+
+FocusBase(base);
