@@ -16,6 +16,11 @@ body {
     font-size: 32px;
 }
 
+.panel_equation {
+    font-size: 12px;
+    text-align: right;
+}
+
 .panel_display {
     font-size: 20px;
     text-align: right;
